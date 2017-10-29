@@ -65,39 +65,17 @@ df['match_format'] = pd.Categorical(df['match_format'], ["Test", "ODI", "T20I", 
 df = df.sort_values('match_format').reset_index(drop=True)
 
 if len(sys.argv) == 1:
-	for i in df[df.match_format.isin(['Test', 'ODI', 'T20I'])].itertuples():
-	    print i.match_format
-	    print '{} v {} - {}'.format(i.batting_first_team, i.batting_second_team, i.match_details)
-	    print '{}'.format(i.match_status)
-	    print ''
+    for i in df[df.match_format.isin(['Test', 'ODI', 'T20I'])].itertuples():
+        print i.match_format
+        print '{} v {} - {}'.format(i.batting_first_team, i.batting_second_team, i.match_details)
+        print '{}'.format(i.match_status)
+        print ''
 
-if 'Test' in sys.argv:
-	for i in df[df.match_format == 'Test'].itertuples():
-	    print i.match_format
-	    print '{} v {} - {}'.format(i.batting_first_team, i.batting_second_team, i.match_details)
-	    print '{}'.format(i.match_status)
-	    print ''
-
-if 'ODI' in sys.argv:
-	for i in df[df.match_format == 'ODI'].itertuples():
-	    print i.match_format
-	    print '{} v {} - {}'.format(i.batting_first_team, i.batting_second_team, i.match_details)
-	    print '{}'.format(i.match_status)
-	    print ''
-
-if 'T20I' in sys.argv:
-	for i in df[df.match_format == 'T20I'].itertuples():
-	    print i.match_format
-	    print '{} v {} - {}'.format(i.batting_first_team, i.batting_second_team, i.match_details)
-	    print '{}'.format(i.match_status)
-	    print ''
-
-if 'other' in sys.argv:
-	for i in df[df.match_format == 'other'].itertuples():
-	    #print i.match_format
-	    print '{} v {} - {}'.format(i.batting_first_team, i.batting_second_team, i.match_details)
-	    print '{}'.format(i.match_status)
-	    print ''
-
-
-
+for f in ['Test', 'ODI', 'T20I', 'other']:
+    if f in sys.argv:
+        for i in df[df.match_format == f].itertuples():
+            if f != 'other':
+                print i.match_format
+            print '{} v {} - {}'.format(i.batting_first_team, i.batting_second_team, i.match_details)
+            print '{}'.format(i.match_status)
+            print ''
