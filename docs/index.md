@@ -1,3 +1,6 @@
+# TerminalCricket
+_Get live cricket scores on your terminal._
+
 To get started with this program clone the repository.  
 `git clone https://github.com/imrankhan17/TerminalCricket.git`
 
