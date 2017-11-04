@@ -18,3 +18,5 @@ __Example usage:__
 `cric Test` Returns all Test match scores  
 `cric ODI T20I` Returns all ODI and T20I scores  
 `cric other` Returns all domestic match scores  
+
+[Home](https://imrankhan17.github.io/)
